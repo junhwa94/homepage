@@ -94,8 +94,7 @@ import model.BoardDTO;
 				         dto.setBcontent(rs.getString("bcontent"));
 				         dto.setBviews(rs.getString("bviews"));
 				         dto.setBreg_date(rs.getString("breg_date"));
-				         
-			            
+      
 				         contentlist.add(dto);
 				         
 				}
@@ -146,21 +145,7 @@ import model.BoardDTO;
 			    conn = ds.getConnection();
 				
 			    if(b_pw.equals("null")){
-			    	String sql = "insert into board(bwriter, bpw, btitle, bcontent) values(?,?,?,?)";
-				      
-				    pstmt = conn.prepareStatement(sql);		
-				   
-				  
-				    pstmt.setString(1, b_writer);
-				    pstmt.setString(2, b_pw);
-				    pstmt.setString(3, b_title);
-				    pstmt.setString(4, b_content);
-			    
-					pstmt.executeUpdate();
-					
-			    }else {
-			    	
-			    	String sql = "insert into board(bwriter, btitle, bcontent) values(?,?,?)";
+					String sql = "insert into board(bwriter, btitle, bcontent) values(?,?,?)";
 			    	
 			    	 pstmt = conn.prepareStatement(sql);		
 					   
@@ -169,6 +154,19 @@ import model.BoardDTO;
 					 pstmt.setString(3, b_content);
 				    
 					 pstmt.executeUpdate();
+					
+			    }else {
+			    	String sql = "insert into board(bwriter, bpw, btitle, bcontent) values(?,?,?,?)";
+				      
+				    pstmt = conn.prepareStatement(sql);		
+
+				    pstmt.setString(1, b_writer);
+				    pstmt.setString(2, b_pw);
+				    pstmt.setString(3, b_title);
+				    pstmt.setString(4, b_content);
+			    
+					pstmt.executeUpdate();
+			    	
 			    }
 			    
 				

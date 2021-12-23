@@ -53,24 +53,49 @@
 					<td class="b_no">${boardList.bnum}</td>
 					<td>${boardList.bwriter}</td>
 					
-					
-					<c:if test="${boardList.bpw != null}">
-						<td><img src="/homepage/img/lock.png"><a href="BoardContent?bnum=${boardList.bnum}&bpw=${boardList.bpw}">${boardList.btitle}</a></td>
-					</c:if>
-					<c:if test="${boardList.bpw == null}">
-						<td><a href="BoardContent?bnum=${boardList.bnum}">${boardList.btitle}</a></td>
-					</c:if>
-		
-					
+				
+						<c:if test="${boardList.bpw != null}">
+							<td><img src="/homepage/img/lock.png"><a href="BoardContent?bnum=${boardList.bnum}&bpw=${boardList.bpw}">${boardList.btitle}</a></td>
+						</c:if>
+						
+						<c:if test= "${boardList.bpw == null}">
+							<td><a href="BoardContent?bnum=${boardList.bnum}">${boardList.btitle}</a></td>
+						</c:if>
+						
+				
 					<td>${boardList.bviews}</td>
-					<td colspan="5">${boardList.breg_date}</td>	
+					<td colspan="5">${boardList.breg_date}</td>
+					
+
 				</tr>
 
 		</c:forEach>
 		
 	</table>
 	
-	
+<%-- 						<c:if test="${boardList.bpw == boardList.bpw}">
+						<td><img src="/homepage/img/lock.png"><a href="BoardContent?bnum=${boardList.bnum}&bpw=${boardList.bpw}">${boardList.btitle}</a></td>
+					</c:if>
+					<c:if test="${boardList.bpw == null}">
+						<td><a href="BoardContent?bnum=${boardList.bnum}">${boardList.btitle}</a></td>
+					</c:if>
+
+					<td>${boardList.bviews}</td>
+					<td colspan="5">${boardList.breg_date}</td>	 --%>
+					
+					
+					
+					
+			<%-- 		<c:choose>
+						<c:when test="${boardList.bpw == boardList.bpw}">
+							<td><img src="/homepage/img/lock.png"><a href="BoardContent?bnum=${boardList.bnum}&bpw=${boardList.bpw}">${boardList.btitle}</a></td>
+						</c:when>
+						
+						<c:otherwise>
+							<td><a href="BoardContent?bnum=${boardList.bnum}">${boardList.btitle}</a></td>
+						</c:otherwise>
+						
+					</c:choose> --%>
 </div>
 </body>
 </html>

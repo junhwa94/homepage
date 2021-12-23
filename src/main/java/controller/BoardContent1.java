@@ -43,7 +43,7 @@ public class BoardContent1 extends HttpServlet {
 		
 			request.setAttribute("contentlist", contentlist);
 			
-			String page = "/homepage/updatePage.jsp";
+			String page = "/homepage/contentPage.jsp";
             
 	        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 	        dispatcher.forward(request, response);

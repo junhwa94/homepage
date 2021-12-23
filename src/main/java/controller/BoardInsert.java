@@ -26,15 +26,15 @@ public class BoardInsert extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("비밀번호 확인 : " + request.getParameter("bpw"));
 		HttpSession session = request.getSession();
 		
 		String b_writer = (String) session.getAttribute("uid");
 		
-		
+		System.out.println("==============bpw==========="+ request.getParameter("bpw"));
 		
 		String b_pw = "";
-		if(request.getParameter("bpw") == null) {
+		if(request.getParameter("bpw").isEmpty()) {
 			b_pw = "null";
 		}else {
 			b_pw = request.getParameter("bpw");

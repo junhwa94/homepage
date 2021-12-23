@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.container{
+	display: flex;  /*중간위치로 잡아줌*/
+	align-items: center;
+	justify-content: center;
+	padding-top: 30px;	
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.jumbotron text-center{
+	border: 1px solid red;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: 0;
+	position: absolute;
+
+}
